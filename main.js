@@ -28,8 +28,8 @@ function mostrarContactos() {
         <td>${contacto.apellido}</td>
         <td>${contacto.telefono}</td>
         <td>
-        <button class="btn btn-warning" onclick="editarContacto(${indice})">Editar</button>
-        <button class="btn btn-danger" onclick="eliminarContacto(${indice})">Eliminar</button>        
+        <button class="btn btn-success bg-gradient fw-bold" onclick="editarContacto(${indice})">Editar</button>
+        <button class="btn btn-warning bg-gradient fw-bold" onclick="eliminarContacto(${indice})">Eliminar</button>        
         </td>
         </tr>`
     })
@@ -39,7 +39,7 @@ function mostrarContactos() {
 function editarContacto(indice) {
     contactos[indice].nombre = prompt('Ingresa un nuevo nombre.', 'Nuevo nombre');
     contactos[indice].apellido = prompt('Ingresa un nuevo apellido.', 'Nuevo apellido');
-    contactos[indice].telefono = prompt('Ingresa un nuevo telefono.', 'Nuevo telefono');
+    contactos[indice].telefono = prompt('Ingresa un nuevo teléfono.', 'Nuevo teléfono');
     mostrarContactos();
 }
 
