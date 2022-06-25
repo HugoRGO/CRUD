@@ -27,8 +27,8 @@ function mostrarContactos() {
         <td class="text-center">${contacto.apellido}</td>
         <td class="text-center">${contacto.telefono}</td>
         <td class="text-center">
-        <button class="btn btn-success mx-1 bg-gradient fw-bold" onclick="editarContacto(${indice})">Editar</button>
-        <button class="btn btn-warning mx-1 bg-gradient fw-bold" onclick="eliminarContacto(${indice})">Eliminar</button>        
+        <button class="btn btn-success m-1 bg-gradient fw-bold" onclick="editarContacto(${indice})">Editar</button>
+        <button class="btn btn-warning m-1 bg-gradient fw-bold" onclick="eliminarContacto(${indice})">Eliminar</button>        
         </td>
         </tr>`
     })
@@ -67,6 +67,19 @@ contactoForm.addEventListener('submit', function (event) {
         alert('Introdusca infromación valida en los 3 campos');
     }
 });
+
+function SoloNumeros(event) {
+    if (window.event){
+        keynum = event.keyCode;
+    } else {
+        keynum = event.which;
+    } if ((keynum > 47 && keynum < 58) || keynum == 8 || keynum == 13){
+        return true;
+    } else {
+        alert ("Ingrese solo numeros en la casilla de Teléfono")
+        return false;
+    }
+}
 
 function guardarContactosStorage() {
     const contactosGuardar = JSON.stringify(contactos);
