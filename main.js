@@ -5,7 +5,6 @@ const inputTelefono = document.getElementById('inputTelefono');
 const bodyTabla = document.getElementById('body-tabla');
 let contactos = [];
 
-
 function agregarContacto(nombre, apellido, telefono) {
     contactos.push({
         nombre,
@@ -23,13 +22,13 @@ function mostrarContactos() {
     bodyTabla.innerHTML = '';
     contactos.forEach(function (contacto, indice) {
         bodyTabla.innerHTML += `<tr>
-        <th scope="row">${indice + 1}</th>
-        <td>${contacto.nombre}</td>
-        <td>${contacto.apellido}</td>
-        <td>${contacto.telefono}</td>
-        <td>
-        <button class="btn btn-success bg-gradient fw-bold" onclick="editarContacto(${indice})">Editar</button>
-        <button class="btn btn-warning bg-gradient fw-bold" onclick="eliminarContacto(${indice})">Eliminar</button>        
+        <th scope="row" class="text-center">${indice + 1}</th>
+        <td class="text-center">${contacto.nombre}</td>
+        <td class="text-center">${contacto.apellido}</td>
+        <td class="text-center">${contacto.telefono}</td>
+        <td class="text-center">
+        <button class="btn btn-success mx-1 bg-gradient fw-bold" onclick="editarContacto(${indice})">Editar</button>
+        <button class="btn btn-warning mx-1 bg-gradient fw-bold" onclick="eliminarContacto(${indice})">Eliminar</button>        
         </td>
         </tr>`
     })
@@ -40,6 +39,7 @@ function editarContacto(indice) {
     contactos[indice].nombre = prompt('Ingresa un nuevo nombre.', 'Nuevo nombre');
     contactos[indice].apellido = prompt('Ingresa un nuevo apellido.', 'Nuevo apellido');
     contactos[indice].telefono = prompt('Ingresa un nuevo teléfono.', 'Nuevo teléfono');
+
     mostrarContactos();
 }
 
@@ -64,7 +64,7 @@ contactoForm.addEventListener('submit', function (event) {
 
         event.target.reset();
     } else {
-        alert('Los 3 campos son obligatorios');
+        alert('Introdusca infromación valida en los 3 campos');
     }
 });
 
